@@ -17,4 +17,23 @@ CHIP DMux4Way {
 
     PARTS:
     // Put your code here:
+    Nand(a=sel[0],b=sel[1],out=w1);
+    Nand(a=w1,b=w1,out=w2);
+    Nand(a=in,b=w1,out=w3);
+    Nand(a=in,b=sel[0],out=w4);
+    Nand(a=in,b=sel[1],out=w5);
+    Nand(a=in,b=w2,out=w6);
+    Nand(a=w3,b=w3,out=w7);
+    Nand(a=w4,b=w4,out=w8);
+    Nand(a=w5,b=w5,out=w9);
+    Nand(a=w6,b=w6,out=d);
+    Nand(a=w7,b=w4,out=w11);
+    Nand(a=w8,b=w5,out=w12);
+    Nand(a=w9,b=w6,out=w13);
+    Nand(a=w11,b=w11,out=w14);
+    Nand(a=w14,b=w13,out=w15);
+    Nand(a=w15,b=w15,out=a);
+    Nand(a=w12,b=w12,out=b);
+    Nand(a=w13,b=w13,out=c);
+
 }
